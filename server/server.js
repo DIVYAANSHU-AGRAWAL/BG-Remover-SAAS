@@ -8,6 +8,8 @@ import userRouter from './routes/userRoutes.js'
 // APP CONFIG
 const PORT = process.env.PORT || 4000
 const app = express()
+
+const startServer = async() => {
 await connectDB()
 
 // Initialize Middlewares
@@ -21,3 +23,6 @@ app.get('/',(req,res)=>{
 app.use('/api/user',userRouter)
 
 app.listen(PORT,()=>console.log("Server running on port ",PORT));
+}
+
+startServer();
